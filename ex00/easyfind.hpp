@@ -14,16 +14,13 @@
 #define EASYFIND_HPP
 
 #include <exception>
-#include <iostream>
-#include <stdexcept>
+#include <exception>
 #include <algorithm>
-#include <vector>
-#include <list>
 
 class NoOccurenceFoundException : public std::exception
 {
 	public:
-		virtual const char* what() throw()
+		virtual const char* what() const throw()
 		{
 			return ("No occurence is found");
 		}
