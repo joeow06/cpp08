@@ -13,19 +13,39 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+# include <exception>
+#include <iterator>
+# include <vector>
+# include <algorithm>
+
 class Span {
 	private:
 		unsigned int _maxNum;
+		std::vector<int> _vec;
 
 	public:
 		Span();
 		~Span();
 		Span(const Span &other);
 		Span &operator=(const Span &other);
+		Span(unsigned int n);
 
-		void addNumber();
+		void addNumber(int n);
 		int shortestSpan();
 		int longestSpan();
+		void fillNumber(std::vector<int>::iterator start,
+			std::vector<int>::iterator end);
+
+		class ContainerFullException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		} ;
+		class NoResultException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		} ;
 };
 
 #endif
