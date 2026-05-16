@@ -34,4 +34,11 @@ int main()
 
 	std::cout << numbers.shortestSpan() << std::endl;
 	std::cout << numbers.longestSpan() << std::endl;
+
+	try {
+		numbers.addNumber(10);
+	}
+	catch (const std::exception &e) {
+		std::cerr << "Container is full" << std::endl;
+	}
 }
