@@ -39,6 +39,8 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << std::endl;
+
 	std::cout << "-------- Deque test -------" << std::endl;
 	std::deque<int> container2;
 	for (int i = 90; i < 100; i++)
