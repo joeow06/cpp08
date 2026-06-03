@@ -12,6 +12,7 @@
 
 #include "MutantStack.hpp"
 #include <iostream>
+#include <list>
 
 int main()
 {
@@ -45,6 +46,40 @@ int main()
 	return 0;
 }
 
+// /*Replaced MutantStack with List and compare output of both*/
+// int main()
+// {
+// 	std::list<int> mstack;
+
+// 	mstack.push_back(5);
+// 	mstack.push_back(17);
+
+// 	std::cout << mstack.back() << std::endl;
+
+// 	mstack.pop_back();
+
+// 	std::cout << mstack.size() << std::endl;
+
+// 	mstack.push_back(3);
+// 	mstack.push_back(5);
+// 	mstack.push_back(737);
+// 	mstack.push_back(0);
+
+// 	std::list<int>::iterator it = mstack.begin();
+// 	std::list<int>::iterator ite = mstack.end();
+
+// 	++it;
+// 	--ite;
+// 	while (it != ite)
+// 	{
+// 		std::cout << *it << std::endl;
+// 		++it;
+// 	}
+// 	std::list<int> s(mstack);
+// 	return 0;
+// }
+
+// /*My own tests*/
 // int main()
 // {
 // 	MutantStack<int> testStack;
@@ -52,11 +87,8 @@ int main()
 // 	std::cout << "Stack size: " << testStack.size() << std::endl;
 // 	MutantStack<int>::iterator it = testStack.begin();
 // 	MutantStack<int>::iterator ite = testStack.end();
-// 	while (it != ite)
-// 	{
-// 		std::cout << *it << std::endl;
-// 		++it;
-// 	}
+// 	if (it == ite)
+// 		std::cout << "Empty stack" << std::endl;
 
 // 	testStack.push(66);
 // 	std::cout << "Stack size: " << testStack.size() << std::endl;
@@ -73,4 +105,6 @@ int main()
 // 	const MutantStack<int> testConst = testStack;
 // 	for (MutantStack<int>::const_iterator it = testConst.begin(); it != testConst.end(); it++)
 // 		std::cout << *it << std::endl;
+// 	// testConst.push(100); //must fail cuz const stack
 // }
+// // use it == ite because when stack is empty, begin and end point to the same thing. 
